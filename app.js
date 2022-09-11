@@ -10,6 +10,7 @@ var guessCount = 1;
 var body = document.querySelector('body');
 var warning = document.querySelector('.warning')
 var currentScore = 0;
+var newGameBtn = document.querySelector('.new-game');
 
 
 checkBtn.addEventListener('click', function(){
@@ -21,6 +22,8 @@ checkBtn.addEventListener('click', function(){
   }
 
   if(randomNumber==userGuess){
+    let background = document.querySelector('body')
+    background.style.backgroundImage = 'linear-gradient(to bottom right, rgb(80, 160, 86), rgb(172, 172, 159))'
     resultEl.textContent = `Congrats! Your number ${userGuess} is the right number!`
     warning.textContent = '';
   } else {
@@ -37,4 +40,15 @@ checkBtn.addEventListener('click', function(){
 })
 ;
 
+newGameBtn.addEventListener('click', function(){
+  let background = document.querySelector('body')
+  randomNumber = Math.ceil(Math.random()*100);
+  resultEl.textContent = `Write the Number`;
+  warning.textContent = '';
+  background.style.backgroundImage = 'linear-gradient(to bottom right, rgb(250, 160, 86), rgb(172, 172, 159))';
+  countAttempts.textContent = 0;
+  currentScore = 0;
+  countAttempts.textContent = currentScore;
+  guessfield.value = '';
+})
 

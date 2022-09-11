@@ -5,7 +5,7 @@
 }
 body{
   height: 100vh;
-  background-image: linear-gradient(to bottom right, rgb(250, 160, 86), rgb(172, 172, 159));
+  background-image: linear-gradient(to bottom right, rgb(196, 112, 44), rgb(172, 172, 159));
   background-repeat: no-repeat;
   background-size: auto;
   font-family: 'Roboto', sans-serif;
@@ -24,7 +24,7 @@ header{
   align-items: center;
 }
 
-#input{
+#guess-field{
   padding: 4px;
   border-radius: 5px;
   border: none;
@@ -66,3 +66,14 @@ img{
   word-spacing: 7px;
 }
 
+.new-game{
+  margin-top: 100px;
+  width: 300px;
+  height: 30px;
+  border-radius: 10px;
+  border: none;
+  letter-spacing: 4px;
+  word-spacing: 10px;
+  font-style: italic;
+  font-weight: bold;
+}
