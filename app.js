@@ -15,6 +15,7 @@ var newGameBtn = document.querySelector('.new-game');
 
 checkBtn.addEventListener('click', function(){
   var userGuess = document.querySelector('.guess-field').value;
+  let rangeNumber = document.querySelector('.range-number');
   if(userGuess < 0 || userGuess > 100){
     alert('please enter a valid number');
     guessfield.value = '';
@@ -29,9 +30,11 @@ checkBtn.addEventListener('click', function(){
   } else {
     resultEl.textContent = `Wrong!`;
     if(userGuess < randomNumber){
-      warning.textContent = `Too low. The number is greater than ${userGuess} `
+      warning.textContent = `Too low. The number is greater than ${userGuess} `;
+      rangeNumber.textContent = `(${userGuess} - 100)`;
     } else if (userGuess > randomNumber){
-      warning.textContent = `Too high. The number is smaller than ${userGuess}`
+      warning.textContent = `Too high. The number is smaller than ${userGuess}`;
+      rangeNumber.textContent = `(1 - ${userGuess})`;
     }
   }
   currentScore++;
