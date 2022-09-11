@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guess The Number App</title>
+  <link rel="stylesheet" href="main.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap" rel="stylesheet">
+</head>
+<body class="body">
+    <header>
+      <h2>Guess The Number (1 - 100)</h2>
+    </header>
+    <div class="input-field">
+      <input type="text" id="guess-field" class="guess-field" placeholder="Please enter a number">
+      <button class="check-btn">CHECK</button>
+    </div>
+    <div>
+      <img src="./images/Magic-Hat-Download-PNG.png" alt="magic hat">
+    </div>
+    <div class="result">
+      <p class="p-1">Write the Number</p>
+      <p class="warning"></p>
+      <p class="p-2">Number of attempts : <span id="attempted">0</span></p>
+      <p class="guesses"></p>
+    </div>
+
+
+    <script src="app.js"></script>
+</body>
+</html>
