@@ -15,7 +15,15 @@ var newGameBtn = document.querySelector('.new-game');
 
 checkBtn.addEventListener('click', function(){
   var userGuess = document.querySelector('.guess-field').value;
-  let rangeNumber = document.querySelector('.range-number');
+  let rangeNumber = document.querySelector('.range-number1');
+  let rangeNumber2 = document.querySelector('.range-number2');
+
+
+  if(guessCount==1){
+    guesses.textContent = 'Previous Guess: ';
+  }
+  guesses.textContent += userGuess + ' '; 
+
   if(userGuess < 0 || userGuess > 100){
     alert('please enter a valid number');
     guessfield.value = '';
@@ -31,23 +39,28 @@ checkBtn.addEventListener('click', function(){
     resultEl.textContent = `Wrong!`;
     if(userGuess < randomNumber){
       warning.textContent = `Too low. The number is greater than ${userGuess} `;
-      rangeNumber.textContent = `(${userGuess} - 100)`;
+      rangeNumber.textContent = `${userGuess}`;
     } else if (userGuess > randomNumber){
       warning.textContent = `Too high. The number is smaller than ${userGuess}`;
-      rangeNumber.textContent = `(1 - ${userGuess})`;
+      rangeNumber2.textContent = `${userGuess}`;
     }
   }
   currentScore++;
   countAttempts.textContent = currentScore;
   guessfield.value = '';
+
 })
 ;
 
 newGameBtn.addEventListener('click', function(){
+  let rangeNumber = document.querySelector('.range-number1');
+  let rangeNumber2 = document.querySelector('.range-number2');
   let background = document.querySelector('body')
   randomNumber = Math.ceil(Math.random()*100);
   resultEl.textContent = `Write the Number`;
   warning.textContent = '';
+  rangeNumber.textContent = `1`
+  rangeNumber2.textContent = `100`
   background.style.backgroundImage = 'linear-gradient(to bottom right, rgb(250, 160, 86), rgb(172, 172, 159))';
   countAttempts.textContent = 0;
   currentScore = 0;
