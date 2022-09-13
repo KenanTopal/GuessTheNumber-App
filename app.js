@@ -22,7 +22,9 @@ checkBtn.addEventListener('click', function(){
   if(guessCount==1){
     guesses.textContent = 'Previous Guess: ';
   }
-  guesses.textContent += userGuess + ' '; 
+  const previous = guesses.innerHTML;
+  guesses.innerHTML = previous + ' ' + userGuess; 
+  console.log(guesses.innerHTML)
 
   if(userGuess < 0 || userGuess > 100){
     alert('please enter a valid number');
